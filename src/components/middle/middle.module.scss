@@ -1,0 +1,33 @@
+@media only screen and (min-width: 1000px) {
+    .bigbox {
+        margin-left: 33vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .container_main {
+        justify-content: center;
+    }
+
+    .bigbox {
+        margin-left: 0.5rem;
+    }
+}
+
+.container {
+    display: flex;
+}
+
+.container_main {
+    height: 100vh;
+    align-items: center;
+}
+
+.bigbox {
+    border-left: 0.25rem solid rgba(0, 0, 0, 0.8);
+    padding-left: 0.5rem;
+}
+
+.box {
+    margin-bottom: 0.75rem;
+}

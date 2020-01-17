@@ -1,0 +1,17 @@
+.subskill .box {
+    margin-right: 0;
+}
+
+.subskill {
+    border-left: 0.25em solid lightgray;
+    padding-left: 0.25em;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box p {
+    padding-right: 0.5rem;
+}
