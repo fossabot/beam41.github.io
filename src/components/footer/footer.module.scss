@@ -43,3 +43,17 @@
         }
     }
 }
+
+@media only screen and (max-width: 750px) {
+    .container {
+        flex-direction: column;
+
+        &+p {
+            margin-bottom: 10px;
+        }
+
+        & p {
+            text-align: center;
+        }
+    }
+}
