@@ -1,15 +1,26 @@
 import React from "react"
 import styles from "./footer.module.scss"
+import { Link, useLocation } from "react-router-dom"
 
 function Footer() {
+  const isHome = useLocation().pathname === "/"
+
   return (
-    <footer className={styles.footer}>
-      <div class={styles.container}>
+    <footer
+      className={styles.footer}
+      style={{
+        backgroundColor: "#000000" + (isHome ? "0e" : "00"),
+      }}
+    >
+      <div className={styles.container}>
         <p>Meehoi</p>
         <p>
-          <a href="https://beam41.github.io/204382-DDA/">
-            My another github website(for my graphics class)
-          </a>
+          {isHome && (
+            <Link to="/DDA">
+              My another github website(for my graphics class)
+            </Link>
+          )}
+          {!isHome && <Link to="/">Back home</Link>}
         </p>
       </div>
     </footer>

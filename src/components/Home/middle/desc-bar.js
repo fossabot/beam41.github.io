@@ -3,9 +3,9 @@ import styles from "./middle.module.scss"
 
 function DescBar({ descList }) {
   return (
-    <div class={styles.box}>
-      {descList.map(value => {
-        return <p>{value}</p>
+    <div className={styles.box}>
+      {descList.map((value, i) => {
+        return <p key={i}>{value}</p>
       })}
     </div>
   )

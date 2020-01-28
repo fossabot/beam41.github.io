@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    margin: 15px 0 0 0;
+}

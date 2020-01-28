@@ -4,9 +4,9 @@ import SubSkillBar from "./sub-skill-bar"
 
 function SkillBar({ skillList }) {
   return (
-    <div class={styles.box}>
+    <div className={styles.box}>
       <h4>Skill</h4>
-      <div class={styles.container}>
+      <div className={styles.container}>
         <SubSkillBar skillList={skillList} />
       </div>
     </div>

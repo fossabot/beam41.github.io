@@ -16,7 +16,8 @@
 .container {
     display: flex;
     justify-content: space-between;
-    margin: 10px 25vw;
+    margin: 0 25vw 0 25vw;
+    padding: 10px 0;
 
     & p,
     & a {

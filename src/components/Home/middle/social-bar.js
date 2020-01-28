@@ -4,7 +4,7 @@ import stylesM from "./middle.module.scss"
 
 function SocialBar({ socialList }) {
   return (
-    <div class={stylesM.box}>
+    <div className={stylesM.box}>
       <h4>Social</h4>
       {socialList.map(value => {
         return (
