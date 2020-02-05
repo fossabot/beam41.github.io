@@ -4,10 +4,10 @@
  * https://github.com/beam41/204382-DDA
  */
 
-import React from "react"
 import DrawCanvas from "./draw-canvas"
-import styles from "./App.module.css"
+import React from "react"
 import TextFill from "./text-fill"
+import styles from "./DDA.module.css"
 
 class App extends React.Component {
   constructor(props) {

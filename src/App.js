@@ -1,19 +1,21 @@
-import React from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Home from "./components/Home"
-import DDA from "./components/DDA"
+import React, { Suspense, lazy } from "react"
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
+
 import Footer from "./components/footer/footer"
+
+const Home = lazy(() => import("./components/Home"))
+const DDA = lazy(() => import("./components/DDA"))
+const Portfolio = lazy(() => import("./components/Portfolio"))
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/DDA">
-          <DDA />
-        </Route>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Route path="/" exact component={Home} />
+          <Route path="/DDA" component={DDA} />
+          <Route path="/portfolio" component={Portfolio} />
+        </Suspense>
       </Switch>
       <Footer />
     </Router>

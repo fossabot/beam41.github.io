@@ -1,6 +1,7 @@
+import { Link, useLocation } from "react-router-dom"
+
 import React from "react"
 import styles from "./footer.module.scss"
-import { Link, useLocation } from "react-router-dom"
 
 function Footer() {
   const isHome = useLocation().pathname === "/"

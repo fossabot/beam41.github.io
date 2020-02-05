@@ -1,6 +1,6 @@
-import React from "react"
 import Middle from "./middle/middle"
-import styles from "./App.module.css"
+import React from "react"
+import styles from "./Home.module.css"
 
 function Main() {
   return (
