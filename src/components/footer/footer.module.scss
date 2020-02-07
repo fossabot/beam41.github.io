@@ -43,3 +43,23 @@
         }
     }
 }
+
+.home {
+    background-color: #0000000e;
+}
+
+.port {
+    background-color: #000000;
+
+    & p {
+        color: rgba(255, 255, 255, 0.50);
+    }
+
+    & a {
+        color: lightblue;
+
+        &:hover {
+            color: rgb(43, 162, 202);
+        }
+    }
+}

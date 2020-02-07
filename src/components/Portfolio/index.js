@@ -1,17 +1,32 @@
+import React, { Component } from "react"
+
 import PortBlock from "./PortBlock"
-import React from "react"
-import { portItem } from "./PortItem"
 import styles from "./Port.module.scss"
 
-function Main() {
-  return (
-    <div className={styles.app}>
-      <h1>Phumdol Portfolio</h1>
-      {portItem.map((val, index) => (
-        <PortBlock info={val} key={index} onRight={index % 2 === 0} />
-      ))}
-    </div>
-  )
+class Main extends Component {
+  constructor() {
+    super()
+    this.state = {
+      item: null,
+    }
+  }
+
+  componentDidMount() {
+    import("./PortItem").then(poIt => {
+      this.setState({ item: poIt.portItem })
+    })
+  }
+  render() {
+    return (
+      <div className={styles.app}>
+        <h1>Phumdol Portfolio</h1>
+        {this.state.item &&
+          this.state.item.map((val, index) => (
+            <PortBlock info={val} key={index} onRight={index % 2 === 0} />
+          ))}
+      </div>
+    )
+  }
 }
 
 export default Main

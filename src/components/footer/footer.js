@@ -4,25 +4,37 @@ import React from "react"
 import styles from "./footer.module.scss"
 
 function Footer() {
-  const isHome = useLocation().pathname === "/"
+  const pn = useLocation().pathname
+  const isHome = pn === "/"
+  const isPort = pn === "/portfolio"
+  const isDda = pn === "/DDA"
 
   return (
     <footer
-      className={styles.footer}
-      style={{
-        backgroundColor: "#000000" + (isHome ? "0e" : "00"),
-      }}
+      className={isPort ? `${styles.port}` : isHome ? `${styles.home}` : ""}
     >
       <div className={styles.container}>
         <p>Meehoi</p>
-        <p>
-          {isHome && (
+
+        {(isHome || isPort) && (
+          <p>
             <Link to="/DDA">
               My another github website(for my graphics class)
             </Link>
-          )}
-          {!isHome && <Link to="/">Back home</Link>}
-        </p>
+          </p>
+        )}
+
+        {(isHome || isDda) && (
+          <p>
+            <Link to="/portfolio">Portfolio</Link>
+          </p>
+        )}
+
+        {!isHome && (
+          <p>
+            <Link to="/">Back home</Link>
+          </p>
+        )}
       </div>
     </footer>
   )
