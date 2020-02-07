@@ -15,7 +15,7 @@ export default function Portblock({ info, onRight }) {
       }}
     >
       <span
-        class={styles.spbox + (!onRight ? ` ${styles.toright}` : "")}
+        className={styles.spbox + (!onRight ? ` ${styles.toright}` : "")}
         style={{ justifySelf: onRight ? "flex-start" : "flex-end" }}
       >
         <h2>{info.title}</h2>

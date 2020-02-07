@@ -16,6 +16,14 @@
     animation: spinner .75s linear infinite;
 }
 
+.isDark {
+    & .spinner {
+        border-color: rgb(209, 209, 209);
+    }
+
+    background-color: black;
+}
+
 @keyframes spinner {
     to {
         transform: rotate(360deg);

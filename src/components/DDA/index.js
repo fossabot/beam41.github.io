@@ -28,6 +28,10 @@ class App extends React.Component {
     this.setColor = this.setColor.bind(this)
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   setXA(input) {
     if (input)
       this.setState({ xa: Math.min(Math.max(parseInt(input, 10), 0), 10000) })

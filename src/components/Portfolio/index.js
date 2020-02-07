@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 
+import Loading from "../loading/loading"
 import PortBlock from "./PortBlock"
 import styles from "./Port.module.scss"
 
@@ -15,6 +16,7 @@ class Main extends Component {
     import("./PortItem").then(poIt => {
       this.setState({ item: poIt.portItem })
     })
+    window.scrollTo(0, 0)
   }
   render() {
     return (
@@ -24,6 +26,7 @@ class Main extends Component {
           this.state.item.map((val, index) => (
             <PortBlock info={val} key={index} onRight={index % 2 === 0} />
           ))}
+        {!this.state.item && <Loading dark />}
       </div>
     )
   }

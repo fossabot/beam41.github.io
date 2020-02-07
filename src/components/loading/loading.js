@@ -1,10 +1,10 @@
 import React from "react"
 import styles from "./loading.module.scss"
 
-export default function Loading() {
+export default function Loading({ dark }) {
   return (
-    <div class={styles.container}>
-      <div class={styles.spinner}></div>
+    <div className={styles.container + (dark ? `${styles.isDark}` : "")}>
+      <div className={styles.spinner}></div>
     </div>
   )
 }
