@@ -27,8 +27,8 @@ export default function Portblock({ info, onRight }) {
           <strong>Tech used:</strong>
         </p>
         <ul>
-          {info.tech.map(val => (
-            <li>{val}</li>
+          {info.tech.map((val, index) => (
+            <li key={index}>{val}</li>
           ))}
         </ul>
       </span>
