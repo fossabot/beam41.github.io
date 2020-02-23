@@ -1,6 +1,7 @@
-import Middle from "./middle/middle"
-import React, { useEffect } from "react"
-import styles from "./Home.module.css"
+import React, { lazy, Suspense, useEffect } from "react"
+import Loading from "../loading/loading"
+
+const Home = lazy(() => import('./Home'));
 
 function Main() {
   useEffect(() => {
@@ -8,9 +9,9 @@ function Main() {
   }, [])
 
   return (
-    <div className={styles.app}>
-      <Middle />
-    </div>
+    <Suspense fallback={<Loading />}>
+      <Home />
+    </Suspense>
   )
 }
 
