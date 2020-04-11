@@ -1,0 +1,13 @@
+.main {
+  height: 100vh;
+  & > * {
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  & code:nth-last-child(1)::after {
+    content: "|";
+    font-weight: 900;
+  }
+}
