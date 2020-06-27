@@ -1,51 +1,58 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import LightModeBtn from "./light-mode-btn"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+import styles from "./layout.module.scss"
 
+const routeList = {
+  "/": {
+    header: "Phumdol",
+    subPage: false,
+  },
+  "/skill": {
+    header: "Skill",
+    subPage: true,
+  },
+}
+
+const Layout = ({ children, location }) => {
+  const { header, subPage } = routeList[location.pathname]
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
+    <div>
+      <LightModeBtn />
+      <header
+        className={
+          styles.topBox + " " + (subPage ? styles.subPage : styles.home)
+        }
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+        <Link to="/">
+          <h1>{header}</h1>
+        </Link>
+        <nav className={styles.navigation}>
+          {subPage && (
+            <div className={styles.navigationLink}>
+              <Link to="/">Home</Link>
+            </div>
+          )}
+          <div className={styles.navigationLink}>
+            <Link to="/skill">Skill</Link>
+          </div>
+        </nav>
+      </header>
+      {children && <main>{children}</main>}
+    </div>
   )
 }
 
+Layout.defaultProps = {
+  children: null,
+}
+
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+  pageContext: PropTypes.object,
 }
 
 export default Layout

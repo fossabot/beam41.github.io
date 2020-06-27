@@ -1,0 +1,60 @@
+@use "../styles/transition";
+
+.light-mode-btn {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  top: 10px;
+  right: 10px;
+
+  .bg {
+    background: #b3e5fc;
+    width: 60px;
+    height: 30px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: all transition.$transition-time-long;
+    position: relative;
+
+    &.dark {
+      background: #01579b;
+      .dot {
+        background: #ffc107;
+        transform: translateX(31px);
+      }
+      .moonDot {
+        background: #01579b;
+        transform: translateY(-5px) translateX(25px) scale(0.9);
+      }
+    }
+  }
+
+  & .dot,
+  & .moonDot {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 100px;
+    transition: all transition.$transition-time-long;
+  }
+
+  .dot {
+    background: #ff9800;
+    transform: translateX(4px);
+  }
+
+  .moonDot {
+    background: #b3e5fc;
+    transform: translateY(-20px) translateX(-20px) scale(0.9);
+  }
+
+  .hint {
+    color: hsl(0, 0, 50%);
+    margin: 5px 0;
+    font-size: 10px;
+    font-family: monospace;
+  }
+}

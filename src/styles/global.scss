@@ -1,0 +1,45 @@
+@use "sass:color";
+@use "transition";
+
+$primary: #242424;
+$secondary: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #{$primary};
+  --bg-color: #{$secondary};
+  --text-accent: #{color.scale($secondary, $lightness: -10%)};
+  --text-accent-shadows: #{color.scale($secondary, $lightness: -30%)};
+  --text-accent-shadows-brighter: #{color.scale($secondary, $lightness: -20%)};
+}
+
+[data-theme="dark"] {
+  --text-color: #{$secondary};
+  --bg-color: #{$primary};
+  --text-accent: #{color.scale($primary, $lightness: 10%)};
+  --text-accent-shadows: #{color.scale($primary, $lightness: -30%)};
+  --text-accent-shadows-brighter: #{color.scale($primary, $lightness: -20%)};
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+  background: var(--bg-color);
+  transition: color transition.$transition-time-long,
+    background transition.$transition-time-long;
+  min-height: 100vh;
+}
+
+.fully-hidden {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
