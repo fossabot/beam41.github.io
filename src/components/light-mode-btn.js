@@ -3,21 +3,16 @@ import React, { useState, useEffect } from "react"
 import styles from "./light-mode.btn.module.scss"
 
 const LightModeBtn = () => {
-  let darkModeMedia = null
-  if (typeof window !== `undefined`) {
-    darkModeMedia = window.matchMedia("(prefers-color-scheme: dark)")
-  }
+  const darkModeMedia = window.matchMedia("(prefers-color-scheme: dark)")
 
-  const [darkMode, setDarkmode] = useState(darkModeMedia?.matches)
+  const [darkMode, setDarkmode] = useState(darkModeMedia.matches)
   useEffect(() => {
     document.body.setAttribute("data-theme", darkMode ? "dark" : "light")
   }, [darkMode])
 
-  if (darkModeMedia) {
-    darkModeMedia.addEventListener("change", e => {
-      setDarkmode(e.matches)
-    })
-  }
+  darkModeMedia.addEventListener("change", e => {
+    setDarkmode(e.matches)
+  })
 
   return (
     <div className={styles.lightModeBtn}>
@@ -33,7 +28,7 @@ const LightModeBtn = () => {
           onChange={event => setDarkmode(event.target.checked)}
         />
       </label>
-      <p class={styles.hint}>try dark mode!</p>
+      <p class={styles.hint}>try {darkMode ? "light" : "dark"} mode!</p>
     </div>
   )
 }

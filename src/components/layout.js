@@ -1,10 +1,11 @@
-import React, { useContext } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-
-import LightModeBtn from "./light-mode-btn"
+import Loadable from "@loadable/component"
 
 import styles from "./layout.module.scss"
+
+const LightModeBtn = Loadable(() => import("./light-mode-btn"))
 
 const routeList = {
   "/": {
@@ -18,10 +19,8 @@ const routeList = {
 }
 
 const Layout = ({ children, location }) => {
-  let routeList = {}
-  if (typeof window !== `undefined`) {
-    routeList = routeList[location.pathname]
-  }
+  const currRoute = routeList[location.pathname]
+
   return (
     <div>
       <LightModeBtn />
@@ -29,14 +28,14 @@ const Layout = ({ children, location }) => {
         className={
           styles.topBox +
           " " +
-          (routeList.subPage ? styles.subPage : styles.home)
+          (currRoute?.subPage ? styles.subPage : styles.home)
         }
       >
         <Link to="/">
-          <h1>{routeList.header}</h1>
+          <h1>{currRoute?.header}</h1>
         </Link>
         <nav className={styles.navigation}>
-          {routeList.subPage && (
+          {currRoute?.subPage && (
             <div className={styles.navigationLink}>
               <Link to="/">Home</Link>
             </div>
