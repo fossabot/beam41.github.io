@@ -18,20 +18,25 @@ const routeList = {
 }
 
 const Layout = ({ children, location }) => {
-  const { header, subPage } = routeList[location.pathname]
+  let routeList = {}
+  if (typeof window !== `undefined`) {
+    routeList = routeList[location.pathname]
+  }
   return (
     <div>
       <LightModeBtn />
       <header
         className={
-          styles.topBox + " " + (subPage ? styles.subPage : styles.home)
+          styles.topBox +
+          " " +
+          (routeList.subPage ? styles.subPage : styles.home)
         }
       >
         <Link to="/">
-          <h1>{header}</h1>
+          <h1>{routeList.header}</h1>
         </Link>
         <nav className={styles.navigation}>
-          {subPage && (
+          {routeList.subPage && (
             <div className={styles.navigationLink}>
               <Link to="/">Home</Link>
             </div>
