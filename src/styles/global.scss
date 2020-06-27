@@ -29,8 +29,6 @@ body {
   font-family: "Roboto", sans-serif;
   color: var(--text-color);
   background: var(--bg-color);
-  transition: color transition.$transition-time-long,
-    background transition.$transition-time-long;
   min-height: 100vh;
 }
 

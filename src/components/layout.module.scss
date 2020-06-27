@@ -9,7 +9,7 @@
   transition: height transition.$transition-time-medium;
 
   * {
-    transition: transition.$global-color, font-size transition.$transition-time-medium;
+    transition: font-size transition.$transition-time-medium;
   }
 
   h1 {

@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    transition: all transition.$transition-time-long;
+    transition: all transition.$transition-time-medium ease-in-out;
     position: relative;
 
     &.dark {
@@ -38,7 +38,7 @@
     height: 25px;
     width: 25px;
     border-radius: 100px;
-    transition: all transition.$transition-time-long;
+    transition: all transition.$transition-time-medium ease-in-out;
   }
 
   .dot {
