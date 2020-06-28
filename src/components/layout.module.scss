@@ -1,6 +1,6 @@
 @use "../styles/transition";
 
-.topBox {
+.top-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,24 +13,45 @@
   }
 
   h1 {
-    margin: 0 0 1em 0;
+    margin: 0;
   }
 
   a {
     color: var(--text-color);
     text-decoration: none;
+
+    &.head {
+      margin: 0 0 1em 0;
+    }
   }
 }
 
 .sub-page {
   height: 20vh;
 
-  h1 {
+  & .head,
+  & h1 {
     font-size: 3rem;
   }
 
   a {
     font-size: 1rem;
+  }
+
+  .head {
+    padding: 5px 10px;
+
+    &:hover {
+      background: var(--text-accent);
+    }
+  }
+
+  & .head,
+  & .navigation-link {
+    transition: background transition.$transition-time-short;
+    &:hover {
+      transition: background 0s;
+    }
   }
 }
 
@@ -73,8 +94,12 @@
   overflow: hidden;
   user-select: none;
 
-  h1 {
+  & .head,
+  & h1 {
     font-size: 10rem;
+  }
+
+  .head {
     padding: 10px;
   }
 
@@ -83,7 +108,7 @@
     padding: 5px 10px;
   }
 
-  & h1,
+  & .head,
   & .navigation-link {
     @extend %long-shadow-hover;
   }

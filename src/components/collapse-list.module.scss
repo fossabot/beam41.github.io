@@ -1,0 +1,33 @@
+@use "../styles/transition";
+
+.collapse-list {
+  width: 100%;
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background transition.$transition-time-short;
+    padding: 10px;
+    &:hover {
+      background: var(--text-accent-brighter);
+      transition: background 0s;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    &.opened {
+      background: var(--text-accent);
+      &:hover {
+        background: var(--text-accent-brighter);
+        transition: background 0s;
+      }
+    }
+  }
+
+  .list-cover {
+    background: var(--text-accent-shadows-brighter);
+  }
+}

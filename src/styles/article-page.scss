@@ -1,8 +1,11 @@
 .article {
-  margin: 0 auto;
   padding: 0 2rem;
-  max-width: 600px;
   text-align: center;
+
+  .limit-size {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
   h2 {
     font-size: 2.5rem;
@@ -19,6 +22,6 @@
   }
 
   section {
-    margin: 2.5rem 0 ;
+    margin: 2.5rem 0;
   }
 }

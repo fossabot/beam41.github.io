@@ -19,7 +19,7 @@ const Layout = ({ children, location, pageContext }) => {
             : styles.home)
         }
       >
-        <Link to="/">
+        <Link to="/" className={styles.head}>
           <h1>Phumdol</h1>
         </Link>
         <nav className={styles.navigation}>

@@ -19,6 +19,7 @@ const LightModeBtn = () => (
           </div>
           <input
             className="fully-hidden"
+            aria-hidden="true"
             type="checkbox"
             checked={theme === 'dark'}
             onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}

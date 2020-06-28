@@ -9,11 +9,14 @@ $secondary: #fff;
 }
 
 body {
+  overflow-y: scroll;
   --text-color: #{$primary};
   --bg-color: #{$secondary};
-  --text-accent: #{color.scale($secondary, $lightness: -10%)};
-  --text-accent-shadows: #{color.scale($secondary, $lightness: -30%)};
-  --text-accent-shadows-brighter: #{color.scale($secondary, $lightness: -20%)};
+  --text-accent: #{color.scale($secondary, $lightness: -15%)};
+  --text-accent-shadows: #{color.scale($secondary, $lightness: -35%)};
+  --text-accent-shadows-brighter: #{color.scale($secondary, $lightness: -25%)};
+  --text-accent-brighter: #{color.scale($secondary, $lightness: -10%)};
+  --text-accent-brightest: #{color.scale($secondary, $lightness: -5%)};
 }
 
 body.dark {
@@ -22,6 +25,8 @@ body.dark {
   --text-accent: #{color.scale($primary, $lightness: 10%)};
   --text-accent-shadows: #{color.scale($primary, $lightness: -30%)};
   --text-accent-shadows-brighter: #{color.scale($primary, $lightness: -20%)};
+  --text-accent-brighter: #{color.scale($primary, $lightness: 15%)};
+  --text-accent-brightest: #{color.scale($primary, $lightness: 20%)};
 }
 
 html,
@@ -40,4 +45,8 @@ body {
   height: 0;
   margin: 0;
   padding: 0;
+}
+
+.ReactCollapse--collapse {
+  transition: height transition.$transition-time-medium;
 }
