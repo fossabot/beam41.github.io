@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 
-import styles from "./index.module.scss"
+import styles from './index.module.scss'
 
 const IndexPage = () => (
   <div className={styles.homePage}>

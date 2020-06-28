@@ -1,41 +1,29 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import Loadable from "@loadable/component"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
-import styles from "./layout.module.scss"
+import LightModeBtn from './light-mode-btn'
 
-const LightModeBtn = Loadable(() => import("./light-mode-btn"))
+import styles from './layout.module.scss'
 
-const routeList = {
-  "/": {
-    header: "Phumdol",
-    subPage: false,
-  },
-  "/skill": {
-    header: "Skill",
-    subPage: true,
-  },
-}
-
-const Layout = ({ children, location }) => {
-  const currRoute = routeList[location.pathname]
-
+const Layout = ({ children, location, pageContext }) => {
   return (
     <div>
-      <LightModeBtn />
+      {typeof window !== 'undefined' && <LightModeBtn />}
       <header
         className={
           styles.topBox +
-          " " +
-          (currRoute?.subPage ? styles.subPage : styles.home)
+          ' ' +
+          (location.pathname !== '/' || pageContext.subPage
+            ? styles.subPage
+            : styles.home)
         }
       >
         <Link to="/">
-          <h1>{currRoute?.header}</h1>
+          <h1>Phumdol</h1>
         </Link>
         <nav className={styles.navigation}>
-          {currRoute?.subPage && (
+          {(location.pathname !== '/' || pageContext.subPage) && (
             <div className={styles.navigationLink}>
               <Link to="/">Home</Link>
             </div>

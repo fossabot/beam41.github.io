@@ -1,12 +1,11 @@
-import React from "react"
+import React from 'react'
 
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 
 const SkillPage = () => (
   <div>
     <SEO title="Skill" />
-    <section>
-    </section>
+    <section></section>
   </div>
 )
 
