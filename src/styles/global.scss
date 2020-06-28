@@ -8,7 +8,7 @@ $secondary: #fff;
   box-sizing: border-box;
 }
 
-:root {
+body {
   --text-color: #{$primary};
   --bg-color: #{$secondary};
   --text-accent: #{color.scale($secondary, $lightness: -10%)};
@@ -16,8 +16,8 @@ $secondary: #fff;
   --text-accent-shadows-brighter: #{color.scale($secondary, $lightness: -20%)};
 }
 
-[data-theme='dark'] {
-  --text-color: #{$secondary};
+body.dark {
+  --text-color: #{color.scale($secondary, $lightness: -10%)};
   --bg-color: #{$primary};
   --text-accent: #{color.scale($primary, $lightness: 10%)};
   --text-accent-shadows: #{color.scale($primary, $lightness: -30%)};
@@ -27,9 +27,9 @@ $secondary: #fff;
 html,
 body {
   font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
   color: var(--text-color);
   background: var(--bg-color);
-  min-height: 100vh;
 }
 
 .fully-hidden {

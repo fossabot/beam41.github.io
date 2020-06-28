@@ -1,0 +1,24 @@
+.article {
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 600px;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  .icon {
+    &.big {
+      font-size: 10em;
+    }
+  }
+
+  section {
+    margin: 2.5rem 0 ;
+  }
+}
