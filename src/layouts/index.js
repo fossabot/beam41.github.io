@@ -6,6 +6,12 @@ import LightModeBtn from '../components/light-mode-btn'
 
 import styles from './layout.module.scss'
 
+const NavigateLink = ({ to, children }) => (
+  <Link to={to} activeClassName={styles.navigationLinkActive}>
+    <div className={styles.navigationLink}>{children}</div>
+  </Link>
+)
+
 const Layout = ({ children, location, pageContext }) => {
   return (
     <div>
@@ -24,13 +30,10 @@ const Layout = ({ children, location, pageContext }) => {
         </Link>
         <nav className={styles.navigation}>
           {(location.pathname !== '/' || pageContext.subPage) && (
-            <div className={styles.navigationLink}>
-              <Link to="/">Home</Link>
-            </div>
+            <NavigateLink to="/">Home</NavigateLink>
           )}
-          <div className={styles.navigationLink}>
-            <Link to="/skill">Skill</Link>
-          </div>
+          <NavigateLink to="/about">About</NavigateLink>
+          <NavigateLink to="/skill">Skill</NavigateLink>
         </nav>
       </header>
       {children && <main>{children}</main>}

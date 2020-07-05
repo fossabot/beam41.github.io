@@ -18,6 +18,7 @@ body {
   --text-accent-list-cover: #{color.scale($secondary, $lightness: -5%)};
   --text-accent-brighter: #{color.scale($secondary, $lightness: -10%)};
   --text-accent-brightest: #{color.scale($secondary, $lightness: -5%)};
+  --selection: #{color.scale(#81d4fa, $alpha: -50%)};
 }
 
 body.dark {
@@ -29,6 +30,7 @@ body.dark {
   --text-accent-list-cover: #{color.scale($primary, $lightness: -20%)};
   --text-accent-brighter: #{color.scale($primary, $lightness: 15%)};
   --text-accent-brightest: #{color.scale($primary, $lightness: 20%)};
+  --selection: #{color.scale(#0277bd, $alpha: -50%)};
 }
 
 html,
@@ -67,4 +69,8 @@ footer {
       transition: all 0s;
     }
   }
+}
+
+::selection {
+  background: var(--selection);
 }

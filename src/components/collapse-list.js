@@ -25,9 +25,9 @@ const CollapseList = ({ name, itemList }) => {
       </label>
       <div className={styles.listCover}>
         <Collapse isOpened={opened}>
-          <div class={styles.itemList}>
-            {itemList.map(({ title, desc }) => (
-              <div class={styles.itemListChild}>
+          <div className={styles.itemList}>
+            {itemList.map(({ title, desc }, index) => (
+              <div className={styles.itemListChild} key={title + '__' + index}>
                 <h5>{title}</h5>
                 <p>{desc}</p>
               </div>

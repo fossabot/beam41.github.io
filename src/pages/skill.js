@@ -9,7 +9,7 @@ const SkillPage = () => (
   <div className="article">
     <SEO title="Skill" />
     <h2>Skill</h2>
-    <div className="section-1">
+    <div className="sub-article bottom-sep">
       <section>
         <span className="icon big">
           <FontAwesomeIcon icon={faReact} />

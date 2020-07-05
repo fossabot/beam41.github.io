@@ -1,0 +1,16 @@
+.not-found {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+
+  h2 {
+    font-size: 40rem;
+    margin: 10px;
+    color: gray;
+    font-family: 'Consolas', monospace;
+    line-height: 0.7;
+    user-select: none;
+  }
+}

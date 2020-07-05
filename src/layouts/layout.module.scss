@@ -7,6 +7,7 @@
   align-items: center;
   width: 100%;
   transition: height transition.$transition-time-medium;
+  user-select: none;
 
   * {
     transition: font-size transition.$transition-time-medium;
@@ -27,21 +28,28 @@
 }
 
 .sub-page {
-  height: 20vh;
+  height: 200px;
 
   & .head,
   & h1 {
     font-size: 3rem;
   }
 
-  a {
-    font-size: 1rem;
-  }
-
   .head {
     padding: 5px 10px;
 
     &:hover {
+      background: var(--text-accent);
+    }
+  }
+
+  .navigation-link {
+    width: 5em;
+    font-size: 1rem;
+  }
+
+  .navigation-link-active {
+    .navigation-link {
       background: var(--text-accent);
     }
   }
@@ -92,7 +100,6 @@
 .home {
   height: 100vh;
   overflow: hidden;
-  user-select: none;
 
   & .head,
   & h1 {
@@ -103,7 +110,8 @@
     padding: 10px;
   }
 
-  a {
+  .navigation-link {
+    width: 8rem;
     font-size: 2rem;
     padding: 5px 10px;
   }
@@ -123,13 +131,10 @@
     display: flex;
     justify-content: center;
     margin: 0 10px;
+    padding: 5px 10px;
 
     &:hover {
       background: var(--text-accent);
-    }
-
-    a {
-      padding: 5px 10px;
     }
   }
 }
@@ -141,4 +146,5 @@
   align-items: center;
   font-size: 0.75rem;
   border-top: 1px solid gray;
+  user-select: none;
 }
