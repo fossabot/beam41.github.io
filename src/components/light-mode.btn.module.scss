@@ -18,36 +18,37 @@
       transition: all transition.$transition-time-medium ease-in-out;
       position: relative;
 
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        border-radius: 100px;
+        transition: all transition.$transition-time-medium ease-in-out;
+      }
+
+      &::before {
+        background: #ff9800;
+        transform: translateX(0px);
+      }
+
+      &::after {
+        background: #b3e5fc;
+        transform: translateY(-10px) translateX(-10px) scale(0.9);
+      }
+
       &.dark {
         background: #01579b;
-        .dot {
+        &::before {
           background: #ffc107;
           transform: translateX(15px);
         }
-        .moon-dot {
+        &::after {
           background: #01579b;
           transform: translateY(-3px) translateX(12px) scale(0.9);
         }
       }
-    }
-
-    & .dot,
-    & .moon-dot {
-      position: absolute;
-      height: 15px;
-      width: 15px;
-      border-radius: 100px;
-      transition: all transition.$transition-time-medium ease-in-out;
-    }
-
-    .dot {
-      background: #ff9800;
-      transform: translateX(0px);
-    }
-
-    .moon-dot {
-      background: #b3e5fc;
-      transform: translateY(-10px) translateX(-10px) scale(0.9);
     }
   }
 

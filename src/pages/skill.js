@@ -3,14 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faVuejs, faUnity } from '@fortawesome/free-brands-svg-icons'
 
 import CollapseList from '../components/collapse-list'
-
 import SEO from '../components/seo'
 
 const SkillPage = () => (
   <div className="article">
     <SEO title="Skill" />
     <h2>Skill</h2>
-    <div className="limit-size">
+    <div className="section-1">
       <section>
         <span className="icon big">
           <FontAwesomeIcon icon={faReact} />
@@ -63,46 +62,74 @@ const SkillPage = () => (
       </section>
     </div>
     <section>
-      <h3>Some more skill I have</h3>
-      <CollapseList
-        name="C#"
-        itemList={[
-          {
-            title: 'I like C3',
-            desc: 'yes',
-          },
-          {
-            title: 'I like C3',
-            desc: 'yes',
-          },
-          {
-            title: 'I like C3',
-            desc: 'yes',
-          },
-          {
-            title: 'I like C3',
-            desc: 'yes',
-          },
-        ]}
-      />
-      <CollapseList
-        name="C#"
-        itemList={[
-          {
-            title: 'I like C3',
-            desc: 'yes',
-          },
-        ]}
-      />
-      <CollapseList
-        name="C#"
-        itemList={[
-          {
-            title: 'I like C3',
-            desc: 'yes',
-          },
-        ]}
-      />
+      <h3 className="more">Some more skill I have</h3>
+      <div className="col-list">
+        <CollapseList
+          name="JavaScript"
+          itemList={[
+            {
+              title: 'Express',
+              desc: `The backend framwork I've use once in my class project. So, I have some experience with it, if it's only about api, not ejs.`,
+            },
+            {
+              title: 'Angular',
+              desc: `I've work with Angular in my project and in my department camp too. Compared to React and Vue, Angular is unnecessary complicated, so, I don't like it.`,
+            },
+          ]}
+        />
+        <CollapseList
+          name="C#"
+          itemList={[
+            {
+              title: 'ASP.NET',
+              desc:
+                'I uses ASP.NET as api server with some C# knowledge from Unity. I can work with it very easily.',
+            },
+          ]}
+        />
+        <CollapseList
+          name="Other programming stuff"
+          itemList={[
+            {
+              title: 'Python',
+              desc: `The first language I learn. I've use a lot, writing simple script, in my project (I made a game from it with Pygame), and in my reserch class (with OpenCV, some NumPy and Matplotlib). I planned to learn Django.`,
+            },
+            {
+              title: 'Java',
+              desc: `I learn Java in OOP class and create one project from it. I prefer C# more because It's less verbose.`,
+            },
+            {
+              title: 'UX/UI',
+              desc: `I like to read design stuff on Internet. I know how to design and prototyping in Figma and Adobe XD, I'm better at UX than UI because I don't have much drawing skill.`,
+            },
+            {
+              title: 'Flutter',
+              desc: `I think it's have same component system as React. But without JSX it's so hard to look at the component code. Anyway I know how to write a simple app.`,
+            },
+            {
+              title: 'Docker',
+              desc: `I tries bundled my Node.js project with MongoDB once It's not so hard tho.`,
+            },
+            {
+              title: 'CI/CD',
+              desc: `I have little experience in CI/CD, like how I setup GitHub Action in this website.`,
+            },
+          ]}
+        />
+        <CollapseList
+          name="Other non-programming stuff"
+          itemList={[
+            {
+              title: 'Photography',
+              desc: `I have 2 cameras. Old Canon 600d and new A7II. I don't know if My photos are good but everyone said they are. I know how to edit image too.`,
+            },
+            {
+              title: 'Video Editing',
+              desc: `I know Adobe Premiere Pro and DaVinci Resolve. but I prefer Adobe Premiere Pro.`,
+            },
+          ]}
+        />
+      </div>
     </section>
   </div>
 )

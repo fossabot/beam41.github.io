@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import LightModeBtn from './light-mode-btn'
+import LightModeBtn from '../components/light-mode-btn'
 
 import styles from './layout.module.scss'
 
@@ -34,6 +34,13 @@ const Layout = ({ children, location, pageContext }) => {
         </nav>
       </header>
       {children && <main>{children}</main>}
+      <footer className={styles.footer}>
+        <div>
+          Made with <a href="https://www.gatsbyjs.org/">GatsbyJS</a> by{' '}
+          <a href="https://github.com/beam41">beam41</a> for{' '}
+          <a href="https://gitlab.com/beam41">himself</a>
+        </div>
+      </footer>
     </div>
   )
 }

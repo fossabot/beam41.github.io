@@ -15,6 +15,7 @@ body {
   --text-accent: #{color.scale($secondary, $lightness: -15%)};
   --text-accent-shadows: #{color.scale($secondary, $lightness: -35%)};
   --text-accent-shadows-brighter: #{color.scale($secondary, $lightness: -25%)};
+  --text-accent-list-cover: #{color.scale($secondary, $lightness: -5%)};
   --text-accent-brighter: #{color.scale($secondary, $lightness: -10%)};
   --text-accent-brightest: #{color.scale($secondary, $lightness: -5%)};
 }
@@ -25,6 +26,7 @@ body.dark {
   --text-accent: #{color.scale($primary, $lightness: 10%)};
   --text-accent-shadows: #{color.scale($primary, $lightness: -30%)};
   --text-accent-shadows-brighter: #{color.scale($primary, $lightness: -20%)};
+  --text-accent-list-cover: #{color.scale($primary, $lightness: -20%)};
   --text-accent-brighter: #{color.scale($primary, $lightness: 15%)};
   --text-accent-brightest: #{color.scale($primary, $lightness: 20%)};
 }
@@ -49,4 +51,20 @@ body {
 
 .ReactCollapse--collapse {
   transition: height transition.$transition-time-medium;
+}
+
+main,
+footer {
+  a {
+    color: var(--text-color);
+    box-shadow: 0px 0px 0px 0px transparent;
+    background: transparent;
+    transition: all transition.$transition-time-short;
+
+    &:hover {
+      box-shadow: 0px 0px 0px 0.2em var(--text-accent-brighter);
+      background: var(--text-accent-brighter);
+      transition: all 0s;
+    }
+  }
 }

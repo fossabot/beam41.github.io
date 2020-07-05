@@ -13,10 +13,7 @@ const LightModeBtn = () => (
         <label className={styles.toggler}>
           <div
             className={styles.bg + ' ' + (theme === 'dark' ? styles.dark : '')}
-          >
-            <div className={styles.dot}></div>
-            <div className={styles.moonDot}></div>
-          </div>
+          ></div>
           <input
             className="fully-hidden"
             aria-hidden="true"

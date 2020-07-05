@@ -7,12 +7,12 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import styles from './collapse-list.module.scss'
 
 const CollapseList = ({ name, itemList }) => {
-  const [opened, setOpened] = useState(false)
+  const [opened, setOpened] = useState(true)
   return (
     <div className={styles.collapseList}>
       <label>
-        <div className={styles.bar + ' ' + (opened ? styles.opened : '')}>
-          <p>{name}</p>
+        <div className={styles.bar}>
+          <h4>{name}</h4>
           <FontAwesomeIcon icon={faChevronDown} />
         </div>
         <input
@@ -25,11 +25,14 @@ const CollapseList = ({ name, itemList }) => {
       </label>
       <div className={styles.listCover}>
         <Collapse isOpened={opened}>
-          {itemList.map(({ title, desc }) => (
-            <div>
-              {title} {desc}
-            </div>
-          ))}
+          <div class={styles.itemList}>
+            {itemList.map(({ title, desc }) => (
+              <div class={styles.itemListChild}>
+                <h5>{title}</h5>
+                <p>{desc}</p>
+              </div>
+            ))}
+          </div>
         </Collapse>
       </div>
     </div>
