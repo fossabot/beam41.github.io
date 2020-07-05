@@ -104,6 +104,18 @@
   & .head,
   & h1 {
     font-size: 10rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 6rem;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 5rem;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 4rem;
+    }
   }
 
   .head {
