@@ -8,6 +8,14 @@ $secondary: #fff;
   box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition: none !important;
+  }
+}
+
 body {
   overflow-y: scroll;
   --text-color: #{$primary};
