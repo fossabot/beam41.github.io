@@ -1,20 +1,20 @@
 @use "../styles/transition";
+@use "../styles/flexbox";
 
 .light-mode-btn {
+  @extend %d-flex--c;
   position: absolute;
-  display: flex;
-  align-items: center;
   top: 10px;
   right: 10px;
   user-select: none;
+  
   .toggler {
     .bg {
+      @extend %d-flex--c;
       background: #b3e5fc;
       width: 30px;
       height: 15px;
       border-radius: 100px;
-      display: flex;
-      align-items: center;
       overflow: hidden;
       transition: all transition.$transition-time-medium ease-in-out;
       position: relative;

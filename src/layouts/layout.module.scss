@@ -1,10 +1,9 @@
 @use "../styles/transition";
+@use "../styles/flexbox";
 
 .top-box {
-  display: flex;
+  @extend %d-flex-c-c;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   transition: height transition.$transition-time-medium;
   user-select: none;
@@ -135,13 +134,12 @@
 }
 
 .navigation {
+  @extend %d-flex;
   color: white;
   z-index: 1000;
-  display: flex;
 
   .navigation-link {
-    display: flex;
-    justify-content: center;
+    @extend %d-flex-c;
     margin: 0 10px;
     padding: 5px 10px;
 
@@ -152,10 +150,8 @@
 }
 
 .footer {
+  @extend %d-flex-c-c;
   height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 0.75rem;
   border-top: 1px solid gray;
   user-select: none;

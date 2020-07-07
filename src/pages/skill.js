@@ -2,6 +2,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faVuejs, faUnity } from '@fortawesome/free-brands-svg-icons'
 
+import '../styles/article-page.scss'
+
 import CollapseList from '../components/collapse-list'
 import SEO from '../components/seo'
 

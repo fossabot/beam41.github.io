@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import Img from 'gatsby-image'
 
 import styles from './about.module.scss'
+import '../styles/article-page.scss'
 
 const AboutPage = ({ data }) => (
   <div className="article">

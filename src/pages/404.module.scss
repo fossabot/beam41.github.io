@@ -1,7 +1,8 @@
+@use "../styles/flexbox";
+
 .not-found {
-  display: flex;
+  @extend %d-flex--c;
   justify-content: space-evenly;
-  align-items: center;
   flex-direction: column;
   height: 80vh;
 

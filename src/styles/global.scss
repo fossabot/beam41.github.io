@@ -17,6 +17,7 @@ $secondary: #fff;
 }
 
 body {
+  margin: 0;
   overflow-y: scroll;
   --text-color: #{$primary};
   --bg-color: #{$secondary};

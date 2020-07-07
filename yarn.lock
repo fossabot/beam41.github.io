@@ -6359,6 +6359,13 @@ gatsby-plugin-manifest@^2.4.13:
     semver "^5.7.1"
     sharp "^0.25.1"
 
+gatsby-plugin-mini-css-class-name@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mini-css-class-name/-/gatsby-plugin-mini-css-class-name-2.1.0.tgz#5435d8d9a1f293702e817c07229f6bb018d7ef84"
+  integrity sha512-X6yidHriOlKhCxSDWfSeIi86k1dVWIbd1oOFEW0Ka5l66odKSjXBoIHk+DHx18ibpUcxt44ZeUuzxYQpSxBquQ==
+  dependencies:
+    mini-css-class-name "^0.9.0"
+
 gatsby-plugin-offline@^3.2.12:
   version "3.2.12"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-3.2.12.tgz#5a6a88b8d4f130487769e2be3a3bb609ab135fec"
@@ -9328,6 +9335,11 @@ min-document@^2.19.0:
   dependencies:
     dom-walk "^0.1.0"
 
+mini-css-class-name@^0.9.0:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/mini-css-class-name/-/mini-css-class-name-0.9.3.tgz#35674b8605717e19fe5e47d1b85f18521ea3c964"
+  integrity sha512-lkQM9fpX9XJjolRVuPvjRqgWLxn5wc3D3BopKx5rVbJdznops3n+0VDesQOOWEZHg8GrXQ0AZyWa7qp1mpe/qw==
+
 mini-css-extract-plugin@^0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.2.tgz#a875e169beb27c88af77dd962771c9eedc3da161"
@@ -9781,11 +9793,6 @@ normalize-url@^4.1.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
   integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
-
-normalize.css@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
-  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
 
 npm-conf@^1.1.0:
   version "1.1.3"
